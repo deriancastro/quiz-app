@@ -1,0 +1,31 @@
+.app {
+  overflow-y: scroll;
+  border: 2px red solid;
+}
+
+.app__card {
+  border: 2px blue solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+.app__card__question {
+  border: 2px green solid;
+}
+
+.app__card__button {
+  border: 2px chocolate solid;
+}
+
+.app__card__tag {
+  border: 2px hotpink solid;
+}
+
+.app__card__tag__list {
+  display: flex;
+  text-decoration: none;
+}
+
+.app__card__tag__item {
+  border: 2px black solid;
+}
