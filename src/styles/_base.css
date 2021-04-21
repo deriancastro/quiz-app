@@ -9,6 +9,21 @@ body {
   font-size: 112.5%;
   line-height: 1.5;
   margin: 0;
+  display: grid;
+  grid-template-rows: 48px auto 48px;
+  height: 100vh;
+}
+
+.app-main {
+  display: grid;
+  place-items: center;
+  grid-gap: 20px;
+  overflow-y: scroll;
+  color: var(--color-white);
+}
+
+.app-main :first-child {
+  margin-top: 20px;
 }
 
 h1,

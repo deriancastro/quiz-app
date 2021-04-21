@@ -20,18 +20,23 @@
   border-bottom-color: transparent;
 }
 
+.quiz-card__button {
+  background: darkkhaki;
+  border: red 2px solid;
+  margin: 0 30px;
+}
+
 .quiz-card__tag-list {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
   list-style: none;
-  padding: 0;
+  padding: 0px;
 }
 
 .quiz-card__tag-list li {
   background-color: steelblue;
   color: white;
+  font-size: 90%;
   padding: 5px;
   border-radius: 10px;
-  align-content: left;
+  margin: 8px 0;
+  text-align: center;
 }
