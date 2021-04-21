@@ -1,31 +1,49 @@
-.app {
+.app-main {
+  display: grid;
+  place-items: center;
+  grid-gap: 20px;
   overflow-y: scroll;
-  border: 2px red solid;
+  color: var(--color-white);
 }
 
-.app__card {
-  border: 2px blue solid;
-  margin: 10px;
+.app-main :first-child {
+  margin-top: 20px;
+}
+
+.quiz-card {
+  background: var(--color-primary);
   padding: 10px;
+  width: 320px;
+  border-radius: 10px;
+  position: relative;
 }
 
-.app__card__question {
-  border: 2px green solid;
+.quiz-card__bookmark {
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  border: 25px solid lightgray;
+  border-bottom-color: transparent;
+  height: 30px;
 }
 
-.app__card__button {
-  border: 2px chocolate solid;
+.quiz-card__bookmark--selected {
+  border: 25px solid orange;
+  border-bottom-color: transparent;
 }
 
-.app__card__tag {
-  border: 2px hotpink solid;
-}
-
-.app__card__tag__list {
+.quiz-card__tag-list {
   display: flex;
-  text-decoration: none;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
 }
 
-.app__card__tag__item {
-  border: 2px black solid;
+.quiz-card__tag-list li {
+  background-color: steelblue;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  align-content: left;
 }
