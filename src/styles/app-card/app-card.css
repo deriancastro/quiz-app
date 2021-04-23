@@ -1,5 +1,5 @@
 .quiz-card {
-  background: var(--color-primary);
+  background: steelblue;
   padding: 10px;
   width: 320px;
   border-radius: 10px;
@@ -21,9 +21,9 @@
 }
 
 .quiz-card__button {
-  background: darkkhaki;
-  border: red 2px solid;
-  margin: 0 30px;
+  background: greenyellow;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 .quiz-card__tag-list {
@@ -32,8 +32,8 @@
 }
 
 .quiz-card__tag-list li {
-  background-color: steelblue;
-  color: white;
+  background-color: lightgray;
+
   font-size: 90%;
   padding: 5px;
   border-radius: 10px;
