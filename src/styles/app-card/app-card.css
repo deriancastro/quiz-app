@@ -1,7 +1,9 @@
 .quiz-card {
+  display: grid;
+  row-gap: 10px;
   background: steelblue;
   padding: 10px;
-  width: 320px;
+  width: 340px;
   border-radius: 10px;
   position: relative;
 }
@@ -21,9 +23,11 @@
 }
 
 .quiz-card__button {
-  background: greenyellow;
+  background: orange;
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 8px;
+  padding: 4px;
+  font-size: 90%;
 }
 
 .quiz-card__tag-list {
@@ -33,7 +37,6 @@
 
 .quiz-card__tag-list li {
   background-color: lightgray;
-
   font-size: 90%;
   padding: 5px;
   border-radius: 10px;
