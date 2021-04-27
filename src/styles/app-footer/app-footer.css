@@ -7,3 +7,16 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.menu__nav-link {
+  padding: 5px;
+  width: 50px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  background: var(--color-primary);
+}
+
+.menu__nav-link--highlighted {
+  background: orange;
+}
