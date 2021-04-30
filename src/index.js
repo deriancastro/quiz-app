@@ -1,94 +1,95 @@
-const buttonQuizCard = document.querySelector('.js-quiz-card-button')
-const buttonBookmark = document.querySelector('.js-quiz-card-bookmark')
-const answer = document.querySelector('.js-quiz-card-answer')
+const quizCardButton = getElement('.js-quiz-card-button')
+const bookmarkSelector = getElement('.js-quiz-card-bookmark')
+const answerText = getElement('.js-quiz-card-answer')
 
-buttonQuizCard.addEventListener('click', () => {
-  answer.classList.toggle('hidden')
+const homeButton = getElement('.js-home-button')
+const bookmarkButton = getElement('.js-bookmark-button')
+const createButton = getElement('.js-create-button')
+const profileButton = getElement('.js-profile-button')
+
+const homePage = getElement('.js-home')
+const bookmarkPage = getElement('.js-bookmark')
+const createPage = getElement('.js-create')
+const profilePage = getElement('.js-profile')
+
+const homeHeader = getElement('.js-home-header')
+const bookmarkHeader = getElement('.js-bookmark-header')
+const createHeader = getElement('.js-create-header')
+const profileHeader = getElement('.js-profile-header')
+
+homeButton.addEventListener('click', navigateToHome)
+bookmarkButton.addEventListener('click', navigateToBookmark)
+createButton.addEventListener('click', navigateToCreate)
+profileButton.addEventListener('click', navigateToProfile)
+
+quizCardButton.addEventListener('click', () => {
+  answerText.classList.toggle('hidden')
 })
 
-buttonBookmark.addEventListener('click', () => {
-  buttonBookmark.classList.toggle('quiz-card__bookmark--selected')
+bookmarkSelector.addEventListener('click', () => {
+  bookmarkSelector.classList.toggle('quiz-card__bookmark--selected')
 })
 
-const home = document.querySelector('.js-home-button')
-const bookmark = document.querySelector('.js-bookmark-button')
-const create = document.querySelector('.js-create-button')
-const profile = document.querySelector('.js-profile-button')
+function navigateToHome() {
+  showHeader(homeHeader)
+  changePage(homePage)
+  activeNavButton(homeButton)
+}
 
-const homePage = document.querySelector('.js-home')
-const bookmarkPage = document.querySelector('.js-bookmark')
-const createPage = document.querySelector('.js-create')
-const profilePage = document.querySelector('.js-profile')
+function navigateToBookmark() {
+  showHeader(bookmarkHeader)
+  changePage(bookmarkPage)
+  activeNavButton(bookmarkButton)
+}
 
-const homeHeader = document.querySelector('.js-home-header')
-const bookmarkHeader = document.querySelector('.js-bookmark-header')
-const createHeader = document.querySelector('.js-create-header')
-const profileHeader = document.querySelector('.js-profile-header')
+function navigateToCreate() {
+  showHeader(createHeader)
+  changePage(createPage)
+  activeNavButton(createButton)
+}
 
-home.addEventListener('click', () => {
-  homePage.classList.remove('hidden')
-  bookmarkPage.classList.add('hidden')
-  createPage.classList.add('hidden')
-  profilePage.classList.add('hidden')
+function navigateToProfile() {
+  showHeader(profileHeader)
+  changePage(profilePage)
+  activeNavButton(profileButton)
+}
 
-  homeHeader.classList.remove('hidden')
-  bookmarkHeader.classList.add('hidden')
-  createHeader.classList.add('hidden')
-  profileHeader.classList.add('hidden')
+function showHeader(header) {
+  hideAllHeader()
+  header.classList.remove('hidden')
+}
 
-  home.classList.add('menu__nav-link--highlighted')
-  bookmark.classList.remove('menu__nav-link--highlighted')
-  create.classList.remove('menu__nav-link--highlighted')
-  profile.classList.remove('menu__nav-link--highlighted')
-})
+function changePage(page) {
+  hideAllPages()
+  page.classList.remove('hidden')
+}
 
-bookmark.addEventListener('click', () => {
-  homePage.classList.add('hidden')
-  bookmarkPage.classList.remove('hidden')
-  createPage.classList.add('hidden')
-  profilePage.classList.add('hidden')
+function activeNavButton(button) {
+  deactiveNavButtons()
+  button.classList.add('menu__nav-link--highlighted')
+}
 
-  homeHeader.classList.add('hidden')
-  bookmarkHeader.classList.remove('hidden')
-  createHeader.classList.add('hidden')
-  profileHeader.classList.add('hidden')
-
-  home.classList.remove('menu__nav-link--highlighted')
-  bookmark.classList.add('menu__nav-link--highlighted')
-  create.classList.remove('menu__nav-link--highlighted')
-  profile.classList.remove('menu__nav-link--highlighted')
-})
-
-create.addEventListener('click', () => {
-  homePage.classList.add('hidden')
-  bookmarkPage.classList.add('hidden')
-  createPage.classList.remove('hidden')
-  profilePage.classList.add('hidden')
-
-  homeHeader.classList.add('hidden')
-  bookmarkHeader.classList.add('hidden')
-  createHeader.classList.remove('hidden')
-  profileHeader.classList.add('hidden')
-
-  home.classList.remove('menu__nav-link--highlighted')
-  bookmark.classList.remove('menu__nav-link--highlighted')
-  create.classList.add('menu__nav-link--highlighted')
-  profile.classList.remove('menu__nav-link--highlighted')
-})
-
-profile.addEventListener('click', () => {
-  homePage.classList.add('hidden')
-  bookmarkPage.classList.add('hidden')
-  createPage.classList.add('hidden')
-  profilePage.classList.remove('hidden')
-
+function hideAllHeader() {
   homeHeader.classList.add('hidden')
   bookmarkHeader.classList.add('hidden')
   createHeader.classList.add('hidden')
-  profileHeader.classList.remove('hidden')
+  profileHeader.classList.add('hidden')
+}
 
-  home.classList.remove('menu__nav-link--highlighted')
-  bookmark.classList.remove('menu__nav-link--highlighted')
-  create.classList.remove('menu__nav-link--highlighted')
-  profile.classList.add('menu__nav-link--highlighted')
-})
+function hideAllPages() {
+  homePage.classList.add('hidden')
+  bookmarkPage.classList.add('hidden')
+  createPage.classList.add('hidden')
+  profilePage.classList.add('hidden')
+}
+
+function deactiveNavButtons() {
+  homeButton.classList.remove('menu__nav-link--highlighted')
+  bookmarkButton.classList.remove('menu__nav-link--highlighted')
+  createButton.classList.remove('menu__nav-link--highlighted')
+  profileButton.classList.remove('menu__nav-link--highlighted')
+}
+
+function getElement(element) {
+  return document.querySelector(element)
+}
