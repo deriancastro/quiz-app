@@ -25,10 +25,30 @@
 }
 
 .quiz-profile__photo > img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
-  border: 2px solid orange;
+  border: 3px solid white;
+  position: absolute;
+  z-index: 1;
+  margin-bottom: -20px;
+  margin-left: -40px;
+}
+
+.quiz-profile__user-name {
+  grid-template-columns: 2;
+  grid-column: 2/3;
+  color: white;
+}
+
+.quiz-profile__container {
+  width: 325px;
+  height: auto;
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
 }
 
 .quiz-profile__skills {
