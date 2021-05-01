@@ -15,49 +15,173 @@
 </head>
 
 <body>
-  <header class="app-header">
+  <header class="app-header js-home-header">
     <h1 class="app-header__heading">SABIO</h1>
   </header>
-  <main class="app-main">
+  <header class="app-header js-bookmark-header hidden">
+    <h1 class="app-header__heading">Bookmarks</h1>
+  </header>
+  <header class="app-header js-create-header hidden">
+    <h1 class="app-header__heading">Create</h1>
+  </header>
+  <header class="app-header js-profile-header hidden">
+    <h1 class="app-header__heading">Profile</h1>
+  </header>
+
+  <main class="app-main js-home">
     <section class="quiz-card">
-      <div role="button" class="quiz-card__bookmark" aria-label="Add bookmark"></div>
-      <h2 class="quiz-card__heading">Question:</h2>
-      <p class="quiz-card__text"> How alt is Derian?</p>
-      <button class="quiz-card__button">Show answer</button>
-      <p class="quiz-card__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, reiciendis?</p>
+      <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
+        aria-label="Add bookmark"></div>
+      <h2 class="quiz-card__question">Question:</h2>
+      <p class="quiz-card__text">
+        What does the command: git branch -d --branch's name-- do?
+      </p>
+      <button class="quiz-card__button js-quiz-card-button">
+        Show answer
+      </button>
+      <p class="quiz-card__text js-quiz-card-answer hidden">
+        Here comes the answer
+      </p>
       <ul class="quiz-card__tag-list">
-        <li>Students</li>
-        <li>Bootcamp</li>
-        <li>Neuefische</li>
+        <li>Delete a Branch</li>
+        <li>Add a new Branch</li>
+        <li>Change Project´s name</li>
       </ul>
     </section>
     <section class="quiz-card">
-      <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected" aria-label="Add bookmark"></div>
-      <h2 class="quiz-card__heading">Question:</h2>
-      <p class="quiz-card__text"> How alt is Derian?</p>
-      <button class="quiz-card__button">Show answer</button>
-      <p class="quiz-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, exercitationem.</p>
+      <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
+        aria-label="Add bookmark"></div>
+      <h2 class="quiz-card__question">Question:</h2>
+      <p class="quiz-card__text">
+        What does the command: git branch -d --branch's name-- do?
+      </p>
+      <button class="quiz-card__button js-quiz-card-button">
+        Show answer
+      </button>
+      <p class="quiz-card__text js-quiz-card-answer hidden">
+        Here comes the answer
+      </p>
       <ul class="quiz-card__tag-list">
-        <li>Students</li>
-        <li>Bootcamp</li>
-        <li>Neuefische</li>
+        <li>Delete a Branch</li>
+        <li>Add a new Branch</li>
+        <li>Change Project´s name</li>
+      </ul>
+    </section>
+    <section class="quiz-card">
+      <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
+        aria-label="Add bookmark"></div>
+      <h2 class="quiz-card__question">Question:</h2>
+      <p class="quiz-card__text">
+        What does the command: git branch -d --branch's name-- do?
+      </p>
+      <button class="quiz-card__button js-quiz-card-button">
+        Show answer
+      </button>
+      <p class="quiz-card__text js-quiz-card-answer hidden">
+        Here comes the answer
+      </p>
+      <ul class="quiz-card__tag-list">
+        <li>Delete a Branch</li>
+        <li>Add a new Branch</li>
+        <li>Change Project´s name</li>
       </ul>
     </section>
   </main>
+
+  <main class="app-main js-bookmark hidden">
+    <section class="quiz-card">
+      <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
+        aria-label="Add bookmark"></div>
+      <h2 class="quiz-card__question">Question:</h2>
+      <p class="quiz-card__text">
+        What does the command: git branch -d --branch's name-- do?
+      </p>
+      <button class="quiz-card__button js-quiz-card-button">
+        Show answer
+      </button>
+      <p class="quiz-card__text js-quiz-card-answer hidden">
+        Here comes the answer
+      </p>
+      <ul class="quiz-card__tag-list">
+        <li>Delete a Branch</li>
+        <li>Add a new Branch</li>
+        <li>Change Project´s name</li>
+      </ul>
+    </section>
+    <section class="quiz-card">
+      <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
+        aria-label="Add bookmark"></div>
+      <h2 class="quiz-card__question">Question:</h2>
+      <p class="quiz-card__text">
+        What does the command: git branch -d --branch's name-- do?
+      </p>
+      <button class="quiz-card__button js-quiz-card-button">
+        Show answer
+      </button>
+      <p class="quiz-card__text js-quiz-card-answer hidden">
+        Here comes the answer
+      </p>
+      <ul class="quiz-card__tag-list">
+        <li>Delete a Branch</li>
+        <li>Add a new Branch</li>
+        <li>Change Project´s name</li>
+      </ul>
+    </section>
+  </main>
+
+  <main class="app-main js-create hidden">
+    <form class="quiz-form">
+      <p>Add a new Question in just 3 steps!</p>
+      <label for="add-question">1. Write your question:</label>
+      <textarea name="" id="add-question" cols="30" rows="5"></textarea>
+      <label for="add-answer">2. The answer:</label>
+      <textarea name="" id="add-answer" cols="30" rows="5"></textarea>
+      <label for="add-tags">3. Add tags:</label>
+      <textarea name="" id="add-tags" cols="30" rows="5" placeholder="divided by comma"></textarea>
+      <button class="quiz-form__button">Submit</button>
+    </form>
+  </main>
+
+  <main class="app-main js-profile hidden">
+    <form class="quiz-profile">
+      <figure class="quiz-profile__photo">
+        <img class="image-fluid" src="../../assets/photo-profile.jpg" alt="" />
+        <figcaption class="quiz-profile__user-name">
+          <h2>Derian Castro</h2>
+        </figcaption>
+      </figure>
+      <div class="quiz-profile__container">
+        <p>
+          Mein Tag beginnt mit Kaffee und endet mit einer Tasse Kakao und einer spannenden Doku,
+          dazwischen findet man mich in Codes vertieft. Mich in der Zeit ablenken? Das haben schon andere
+          versucht.
+        </p>
+      </div>
+      <ul class="quiz-profile__skills">
+        <h3>My Skills</h3>
+        <li>Html</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>PHP</li>
+      </ul>
+      <button class="quiz-profile__button js-quiz-profile-logout">logout</button>
+    </form>
+  </main>
+
   <footer class="menu">
     <nav class="menu__nav">
-      <a class="menu__nav__link" href="./index.html" aria-label="Home">
+      <button class="menu__nav-link menu__nav-link--highlighted js-home-button">
         <img src="../../assets/house.png" alt="" />
-      </a>
-      <a class="menu__nav__link" href="./bookmarks.html" aria-label="Bookmarks">
+      </button>
+      <button class="menu__nav-link js-bookmark-button">
         <img src="../../assets/bookmark.png" alt="" />
-      </a>
-      <a class="menu__nav__link" href="./create.html" aria-label="Add a new Bookmark">
+      </button>
+      <button class="menu__nav-link js-create-button">
         <img src="../../assets/edit.png" alt="" />
-      </a>
-      <a class="menu__nav__link" href="./profile.html" aria-label="Profil">
+      </button>
+      <button class="menu__nav-link js-profile-button">
         <img src="../../assets/user.png" alt="" />
-      </a>
+      </button>
     </nav>
   </footer>
 </body>
