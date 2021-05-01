@@ -1,7 +1,7 @@
 .quiz-card {
   display: grid;
   gap: 10px;
-  background: steelblue;
+  background: var(--color-blue);
   padding: 10px 15px;
   border-radius: 10px;
   position: relative;
@@ -12,18 +12,18 @@
   position: absolute;
   top: -30px;
   right: 10px;
-  border: 25px solid lightgray;
+  border: 25px solid var(--color-secundary);
   border-bottom-color: transparent;
   height: 30px;
 }
 
 .quiz-card__bookmark--selected {
-  border: 25px solid orange;
+  border: 25px solid var(--color-orange);
   border-bottom-color: transparent;
 }
 
 .quiz-card__button {
-  background: orange;
+  background: var(--color-orange);
   margin: 0 auto;
   border-radius: 8px;
   padding: 5px;
@@ -37,7 +37,7 @@
 }
 
 .quiz-card__tag-list li {
-  background-color: lightgray;
+  background-color: var(--color-secundary);
   font-size: 90%;
   padding: 5px;
   border-radius: 10px;

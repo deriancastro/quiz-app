@@ -18,5 +18,5 @@
 }
 
 .menu__nav-link--highlighted {
-  background: orange;
+  background: var(--color-orange);
 }
