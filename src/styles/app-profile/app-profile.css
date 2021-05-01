@@ -1,11 +1,10 @@
 .quiz-profile {
   display: grid;
   background: steelblue;
-  padding: 10px 15px;
+  padding: 30px 15px;
   border-radius: 10px;
   gap: 10px;
   width: 355px;
-  align-items: center;
 }
 
 .quiz-profile__button {
@@ -38,7 +37,6 @@
 .quiz-profile__user-name {
   grid-template-columns: 2;
   grid-column: 2/3;
-  color: white;
 }
 
 .quiz-profile__container {
@@ -54,9 +52,8 @@
 .quiz-profile__skills {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  align-items: center;
   justify-content: space-evenly;
-  row-gap: 20px;
+  row-gap: 10px;
 }
 
 .quiz-profile__skills > h3 {
