@@ -15,20 +15,10 @@
 </head>
 
 <body>
-  <header class="app-header js-home-header">
-    <h1 class="app-header__heading">SABIO</h1>
+  <header class="app-header">
+    <h1 class="app-header__heading" data-header>SABIO</h1>
   </header>
-  <header class="app-header js-bookmark-header hidden">
-    <h1 class="app-header__heading">Bookmarks</h1>
-  </header>
-  <header class="app-header js-create-header hidden">
-    <h1 class="app-header__heading">Create</h1>
-  </header>
-  <header class="app-header js-profile-header hidden">
-    <h1 class="app-header__heading">Profile</h1>
-  </header>
-
-  <main class="app-main js-home">
+  <main class="app-main" data-page="home">
     <section class="quiz-card">
       <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
         aria-label="Add bookmark"></div>
@@ -88,7 +78,7 @@
     </section>
   </main>
 
-  <main class="app-main js-bookmark hidden">
+  <main class="app-main hidden" data-page="bookmark">
     <section class="quiz-card">
       <div role="button" class="quiz-card__bookmark quiz-card__bookmark--selected js-quiz-card-bookmark"
         aria-label="Add bookmark"></div>
@@ -129,7 +119,7 @@
     </section>
   </main>
 
-  <main class="app-main js-create hidden">
+  <main class="app-main hidden" data-page="create">
     <form class="quiz-form">
       <p>Add a new Question in just 3 steps!</p>
       <label for="add-question">1. Write your question:</label>
@@ -142,7 +132,7 @@
     </form>
   </main>
 
-  <main class="app-main js-profile hidden">
+  <main class="app-main hidden" data-page="profile">
     <form class="quiz-profile">
       <figure class="quiz-profile__photo">
         <img class="image-fluid" src="../../assets/photo-profile.jpg" alt="" />
@@ -170,16 +160,16 @@
 
   <footer class="menu">
     <nav class="menu__nav">
-      <button class="menu__nav-link menu__nav-link--highlighted js-home-button">
+      <button class="menu__nav-link menu__nav-link--highlighted" data-nav="home" data-header-text="Sabio">
         <img src="../../assets/house.png" alt="" />
       </button>
-      <button class="menu__nav-link js-bookmark-button">
+      <button class="menu__nav-link" data-nav="bookmark" data-header-text="bookmarks">
         <img src="../../assets/bookmark.png" alt="" />
       </button>
-      <button class="menu__nav-link js-create-button">
+      <button class="menu__nav-link" data-nav="create" data-header-text="create card">
         <img src="../../assets/edit.png" alt="" />
       </button>
-      <button class="menu__nav-link js-profile-button">
+      <button class="menu__nav-link" data-nav="profile" data-header-text="profile page">
         <img src="../../assets/user.png" alt="" />
       </button>
     </nav>
