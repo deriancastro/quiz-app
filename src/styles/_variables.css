@@ -3,7 +3,8 @@
   --color-black: #111;
   --color-primary: #333;
   --color-secundary: #d3d3d3;
-  --color-blue: #4682b4;
-  --color-orange: #ffa500;
+  --color-blue: #539ad4;
+  --color-orange: #be851c;
   --color-transparent: rgba(255, 255, 255, 0.2);
+  --color-brown: rgba(185, 177, 150, 0.979);
 }

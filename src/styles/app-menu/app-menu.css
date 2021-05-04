@@ -1,6 +1,6 @@
 .app-menu {
   position: absolute;
-  top: 6px;
+  top: 2px;
   right: 10px;
   display: grid;
   place-items: center;

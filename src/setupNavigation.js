@@ -3,6 +3,7 @@ import getElement from './utils/getElement'
 
 export default function setupNavigation() {
   const header = getElement('[data-header]')
+  const menuSection = getElement('[data-menu-section="profile"]')
   const pages = getAllElements('[data-page]')
   const buttons = getAllElements('[data-nav]')
 
@@ -12,17 +13,25 @@ export default function setupNavigation() {
       header.innerText = button.dataset.headerText.toUpperCase()
       changePage(buttonName)
       changeButton(buttonName)
+      showMenu(buttonName)
     })
   })
 
   function changeButton(buttonName) {
     buttons.forEach(button => {
-      const buttonActiveName = button.dataset.nav
+      const buttonCurrent = button.dataset.nav
       button.classList.toggle(
         'menu__nav-link--highlighted',
-        buttonActiveName === buttonName
+        buttonCurrent === buttonName
       )
     })
+  }
+
+  function showMenu(buttonName) {
+    menuSection.classList.toggle(
+      'hidden',
+      buttonName !== menuSection.dataset.menuSection
+    )
   }
 
   function changePage(buttonName) {

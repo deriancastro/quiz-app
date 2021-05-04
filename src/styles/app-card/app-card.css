@@ -1,7 +1,7 @@
 .quiz-card {
   display: grid;
   gap: 10px;
-  background: var(--color-blue);
+  background: var(--color-brown);
   padding: 10px 15px;
   border-radius: 10px;
   position: relative;
@@ -37,7 +37,7 @@
 }
 
 .quiz-card__tag-list li {
-  background-color: var(--color-secundary);
+  background-color: var(--color-blue);
   font-size: 90%;
   padding: 5px;
   border-radius: 10px;
