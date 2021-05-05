@@ -1,6 +1,6 @@
 .quiz-profile {
   display: grid;
-  background: steelblue;
+  background: var(--color-brown);
   padding: 30px 15px;
   border-radius: 10px;
   gap: 10px;
@@ -8,7 +8,7 @@
 }
 
 .quiz-profile__button {
-  background: orange;
+  background: var(--color-orange);
   margin: 0 auto;
   border-radius: 8px;
   padding: 5px;
@@ -21,17 +21,18 @@
   grid-template-columns: 50% 50%;
   column-gap: 30px;
   align-items: center;
+  position: relative;
 }
 
 .quiz-profile__photo > img {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  border: 3px solid white;
+  border: 3px solid var(--color-white);
   position: absolute;
+  bottom: -50px;
+  left: -40px;
   z-index: 1;
-  margin-bottom: -5%;
-  margin-left: -10%;
 }
 
 .quiz-profile__user-name {
@@ -45,8 +46,7 @@
   background: var(--color-white);
   border-radius: 10px;
   padding: 10px;
-  text-align: center;
-  position: relative;
+  text-align: justify;
 }
 
 .quiz-profile__skills {

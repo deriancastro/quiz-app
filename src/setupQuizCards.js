@@ -3,7 +3,6 @@ import getAllElements from './utils/getAllElements'
 
 export default function setupQuizCards() {
   const cards = getAllElements('.quiz-card')
-  console.log(cards)
 
   cards.forEach(card => {
     const quizCardButton = getElement('.js-quiz-card-button', card)

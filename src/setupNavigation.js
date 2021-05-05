@@ -1,83 +1,43 @@
+import getAllElements from './utils/getAllElements'
 import getElement from './utils/getElement'
 
 export default function setupNavigation() {
-  const homeButton = getElement('.js-home-button')
-  const bookmarkButton = getElement('.js-bookmark-button')
-  const createButton = getElement('.js-create-button')
-  const profileButton = getElement('.js-profile-button')
+  const header = getElement('[data-header]')
+  const menuSection = getElement('[data-menu-section="profile"]')
+  const pages = getAllElements('[data-page]')
+  const buttons = getAllElements('[data-nav]')
 
-  const homePage = getElement('.js-home')
-  const bookmarkPage = getElement('.js-bookmark')
-  const createPage = getElement('.js-create')
-  const profilePage = getElement('.js-profile')
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const buttonName = button.dataset.nav
+      header.innerText = button.dataset.headerText.toUpperCase()
+      changePage(buttonName)
+      changeButton(buttonName)
+      showMenu(buttonName)
+    })
+  })
 
-  const homeHeader = getElement('.js-home-header')
-  const bookmarkHeader = getElement('.js-bookmark-header')
-  const createHeader = getElement('.js-create-header')
-  const profileHeader = getElement('.js-profile-header')
-
-  homeButton.addEventListener('click', navigateToHome)
-  bookmarkButton.addEventListener('click', navigateToBookmark)
-  createButton.addEventListener('click', navigateToCreate)
-  profileButton.addEventListener('click', navigateToProfile)
-
-  function navigateToHome() {
-    showHeader(homeHeader)
-    changePage(homePage)
-    activeNavButton(homeButton)
+  function changeButton(buttonName) {
+    buttons.forEach(button => {
+      const buttonCurrent = button.dataset.nav
+      button.classList.toggle(
+        'menu__nav-link--highlighted',
+        buttonCurrent === buttonName
+      )
+    })
   }
 
-  function navigateToBookmark() {
-    showHeader(bookmarkHeader)
-    changePage(bookmarkPage)
-    activeNavButton(bookmarkButton)
+  function showMenu(buttonName) {
+    menuSection.classList.toggle(
+      'hidden',
+      buttonName !== menuSection.dataset.menuSection
+    )
   }
 
-  function navigateToCreate() {
-    showHeader(createHeader)
-    changePage(createPage)
-    activeNavButton(createButton)
-  }
-
-  function navigateToProfile() {
-    showHeader(profileHeader)
-    changePage(profilePage)
-    activeNavButton(profileButton)
-  }
-
-  function showHeader(header) {
-    hideAllHeader()
-    header.classList.remove('hidden')
-  }
-
-  function changePage(page) {
-    hideAllPages()
-    page.classList.remove('hidden')
-  }
-
-  function activeNavButton(button) {
-    deactiveNavButtons()
-    button.classList.add('menu__nav-link--highlighted')
-  }
-
-  function hideAllHeader() {
-    homeHeader.classList.add('hidden')
-    bookmarkHeader.classList.add('hidden')
-    createHeader.classList.add('hidden')
-    profileHeader.classList.add('hidden')
-  }
-
-  function hideAllPages() {
-    homePage.classList.add('hidden')
-    bookmarkPage.classList.add('hidden')
-    createPage.classList.add('hidden')
-    profilePage.classList.add('hidden')
-  }
-
-  function deactiveNavButtons() {
-    homeButton.classList.remove('menu__nav-link--highlighted')
-    bookmarkButton.classList.remove('menu__nav-link--highlighted')
-    createButton.classList.remove('menu__nav-link--highlighted')
-    profileButton.classList.remove('menu__nav-link--highlighted')
+  function changePage(buttonName) {
+    pages.forEach(page => {
+      const pageName = page.dataset.page
+      page.classList.toggle('hidden', pageName !== buttonName)
+    })
   }
 }
