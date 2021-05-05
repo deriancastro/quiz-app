@@ -1,6 +1,5 @@
 import getElement from './utils/getElement'
-import setupQuizCards from './setupQuizCards'
-import setupBookmarks from './setupBookmarks'
+import setupButtonBookmark from './setupButtonBookmark'
 
 export default function setupCreateCard() {
   const form = getElement('[data-js="form"]')
@@ -8,8 +7,8 @@ export default function setupCreateCard() {
 
   form.addEventListener('submit', handleSubmit)
 
-  //   const shapes = loadFromLocal('shapes') ?? []
-  //   shapes.forEach(renderShape)
+  const cards = loadFromLocal('cards') ?? []
+  cards.forEach(renderCard)
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -22,8 +21,8 @@ export default function setupCreateCard() {
     }
 
     renderCard(newCard)
-    // shapes.push(newShape)
-    // saveToLocal('shapes', shapes)
+    cards.push(newCard)
+    saveToLocal('cards', cards)
     form.reset()
   }
 
@@ -55,16 +54,15 @@ export default function setupCreateCard() {
     `
     console.log(el)
     cardList.prepend(el)
-    setupQuizCards()
-    setupBookmarks()
+    setupButtonBookmark(el)
   }
-  /*
+
   function loadFromLocal(key) {
-    const jsonString = localStorage.getItem(key) 
+    const jsonString = localStorage.getItem(key)
     return JSON.parse(jsonString)
   }
-  
+
   function saveToLocal(key, data) {
     localStorage.setItem(key, JSON.stringify(data))
-  } */
+  }
 }
